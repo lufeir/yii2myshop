@@ -9,13 +9,14 @@ namespace backend\models;
 use yii\db\ActiveRecord;
 
 class Brand extends ActiveRecord{
-    public $imgFile;
+
     public function rules()
     {
         return[
             [['name','intro'],'required'],
             [['sort','status'],'integer'],
-            ['imgFile','file','extensions'=>['jpg','png','gif']]
+            ['logo','string']
+
         ];
     }
     public function attributeLabels()
@@ -24,7 +25,7 @@ class Brand extends ActiveRecord{
             'name'=>'品牌名称',
             'intro'=>'介绍',
             'sort'=>'排序',
-            'imgFile'=>'图片',
+            'logo'=>'LOGO',
             'status'=>'状态',
         ];
     }
