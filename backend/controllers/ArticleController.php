@@ -22,17 +22,17 @@ class ArticleController extends Controller{
         $request=new Request();
         if($request->isPost){//判断请求参数
             $model->load($request->post());
-            if($model->validate()){
+            $model2->load($request->post());
+            if($model->validate() && $model2->validate()){
                 $model->create_time=time();
                 $model->save();
                 $model2->article_id=$model->id;
-                $model2->content=$model->intro;
                 $model2->save();
                 \Yii::$app->session->setFlash('success','文章添加成功');
                 return $this->redirect(['article/index']);
             }
         }
-        return $this->render('add',['model'=>$model,'data'=>$data]);
+        return $this->render('add',['model'=>$model,'data'=>$data,'model2'=>$model2]);
     }
     public function actionIndex(){
         $query=Article::find()->where(['status'=>1])->orderBy('sort');
@@ -50,15 +50,15 @@ class ArticleController extends Controller{
         $request=new Request();
         if($request->isPost){
             $model->load($request->post());
+            $model2->load($request->post());
             if($model->validate()){
                 $model->save();
-                $model2->content=$model->intro;
                 $model2->save();
                 \Yii::$app->session->setFlash('success','文章修改成功');
                 return $this->redirect(['article/index']);
             }
         }
-        return $this->render('add',['model'=>$model,'data'=>$data]);
+        return $this->render('add',['model'=>$model,'data'=>$data,'model2'=>$model2]);
 
     }
     public function actionDelete($id){
@@ -71,5 +71,18 @@ class ArticleController extends Controller{
         $content=ArticleDetail::findOne(['article_id'=>$id]);
         $model=Article::findOne(['id'=>$id]);
         return $this->render('content',['content'=>$content,'model'=>$model]);
+    }
+    public function actions()
+    {
+        return [
+
+            'ueditor' => [
+                'class' => 'crazyfd\ueditor\Upload',
+                'config'=>[
+                    'uploadDir'=>date('Y/m/d')
+                ]
+
+            ],
+        ];
     }
 }

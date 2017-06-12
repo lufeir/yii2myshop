@@ -11,5 +11,6 @@ echo $form->field($model,'status',['inline'=>true])->radioList(\backend\models\A
 echo $form->field($model,'article_category_id')->dropDownList(\yii\helpers\ArrayHelper::map($data,'id','name'),['prompt' => '请选择文章分类']);
 echo $form->field($model,'sort')->textInput();
 echo $form->field($model,'intro')->textarea();
+echo $form->field($model2, 'content')->widget(\crazyfd\ueditor\Ueditor::className(),[]);
 echo \yii\helpers\Html::submitButton('添加',['class'=>'btn btn-info']);
 \yii\bootstrap\ActiveForm::end();

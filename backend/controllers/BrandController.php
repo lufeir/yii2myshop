@@ -119,6 +119,7 @@ class BrandController extends Controller{
                     $qiniu->uploadFile(\Yii::getAlias('@webroot').$imgUrl,$imgUrl);
                     //获取上传到七牛云的地址
                     $url = $qiniu->getLink($imgUrl);
+                    //将地址给那个uoloadfiy插件
                     $action->output['fileUrl'] = $url;
 //                    $action->output['fileUrl'] = $action->getWebUrl();
 //                    $action->getFilename(); // "image/yyyymmddtimerand.jpg"
@@ -129,12 +130,14 @@ class BrandController extends Controller{
         ];
     }
     public function actionTest(){
+        //实例化七牛云类
         $qiniu=\Yii::$app->qiniu;
+        //找到图片路径
         $filename=\Yii::getAlias('@webroot').'/images/brand/'.'5939038fab797.jpg';
-        $key='test.jpg';
-        $re = $qiniu->uploadFile($filename,$key);
+        $key='test.jpg';//上传后的图片名称
+        $re = $qiniu->uploadFile($filename,$key);//上传图片到七牛云
 
-        $url = $qiniu->getLink($key);
+        $url = $qiniu->getLink($key);//获取上次到七牛云的图片的路径
         var_dump($url);
     }
 }
