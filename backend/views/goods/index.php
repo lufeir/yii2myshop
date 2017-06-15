@@ -44,7 +44,7 @@ echo GridView::widget([
 
         // 更复杂的列数据
         ['label'=>'封面图','format'=>'raw','value'=>function($m){
-            return \yii\helpers\Html::img($m->logo,['class' => 'img-circle','width' => 30]);
+            return \yii\helpers\Html::img(Yii::getAlias('@web').$m->logo,['class' => 'img-circle','width' => 30]);
         }],
         [
             'class' => 'yii\grid\ActionColumn',

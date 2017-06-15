@@ -13,7 +13,7 @@
             <td><?=$model->id?></td>
             <td><?=$model->name?></td>
             <td><?=$model->intro?></td>
-            <td><?=\yii\helpers\Html::img($model->logo,['width'=>80])?></td>
+            <td><?=\yii\helpers\Html::img(Yii::getAlias('@web').$model->logo,['width'=>80])?></td>
             <td><?= \yii\helpers\Html::a('修改',['brand/edit','id'=>$model->id],['class'=>'btn btn-warning'])?> &emsp;&emsp;<?= \yii\helpers\Html::a('删除',['brand/delete','id'=>$model->id],['class'=>'btn btn-danger'])?></td>
 
         </tr>

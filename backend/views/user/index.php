@@ -16,7 +16,7 @@
                     <td><?=$model->username?></td>
                     <td><?=$model->email?></td>
                     <td><?=date('Y-m-d H:i:s',$model->created_at)?></td>
-                    <td><?=\yii\helpers\Html::img($model->logo,['width'=>60])?></td>
+                    <td><?=\yii\helpers\Html::img(Yii::getAlias('@web').$model->logo,['width'=>60])?></td>
                     <td><?= \yii\helpers\Html::a('修改',['user/edit','id'=>$model->id],['class'=>'btn btn-warning'])?> &emsp;&emsp;<?= \yii\helpers\Html::a('删除',['user/delete','id'=>$model->id],['class'=>'btn btn-danger'])?></td>
 
                 </tr>
