@@ -36,14 +36,8 @@ class GoodsCategoryController extends \yii\web\Controller
        return $this->render('add',['model'=>$model,'categories'=>$categories]);
    }
   public function actionIndex(){
-      $query=GoodsCategory::find();//
-      $total=$query->count();//统计个数
-      //调用分页工具
-      $page=new Pagination(['defaultPageSize'=>2,
-          'totalCount'=>$total
-      ]);
-      $models=$query->offset($page->offset)->limit($page->limit)->all();//获取每页数据
-      return $this->render('index',['models'=>$models,'page'=>$page]);
+      $models=GoodsCategory::find()->orderBy(['tree'=>SORT_ASC,'lft'=>SORT_ASC]);//
+      return $this->render('index',['models'=>$models]);
   }
   public function actionEdit($id){
       $model=GoodsCategory::findOne(['id'=>$id]);

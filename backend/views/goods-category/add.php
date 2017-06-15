@@ -1,10 +1,5 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: 李政宇
- * Date: 2017/6/11
- * Time: 14:17
- * /**
  * @var $this \yii\web\View
  */
 

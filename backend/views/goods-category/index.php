@@ -1,5 +1,5 @@
 <?= \yii\helpers\Html::a('添加商品分类',['goods-category/add'],['class'=>'btn btn-info'])?>
-    <table class="table table-bordered">
+    <table class="table table-bordered" style="line-height: ">
         <tr>
             <th>ID</th>
             <th>分类名称</th>
@@ -13,7 +13,6 @@
                     <td><?=$model->id?></td>
                     <td><?=$model->name?></td>
                     <td><?=$model->intro?></td>
-                    <td><?=$model->depth?></td>
                     <td><?= \yii\helpers\Html::a('修改',['goods-category/edit','id'=>$model->id],['class'=>'btn btn-warning'])?> &emsp;&emsp;<?= \yii\helpers\Html::a('删除',['goods-category/delete','id'=>$model->id],['class'=>'btn btn-danger'])?></td>
 
                 </tr>
