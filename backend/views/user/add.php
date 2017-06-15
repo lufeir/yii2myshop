@@ -46,7 +46,7 @@ EOF
     ]
 ]);
 if($model->logo){
-    echo \yii\helpers\Html::img($model->logo,['id'=>'logo','width'=>50]);
+    echo \yii\helpers\Html::img(Yii::getAlias('@web').$model->logo,['id'=>'logo','width'=>50]);
 }else {
     echo \yii\helpers\Html::img('', ['style' => 'display:none', 'id' => 'img_logo', 'width' => 50]);
 }
