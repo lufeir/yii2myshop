@@ -44,6 +44,7 @@ class UserController extends Controller{
             $model->load($request->post());
             if($model->validate()){
                 $model->save();
+                $model->upRole($model->id);
                 \Yii::$app->session->setFlash('success','添加成功');
                 $this->redirect(['user/index']);
             }
@@ -63,12 +64,13 @@ class UserController extends Controller{
         $model=User::findOne(['id'=>$id]);
        $model->setScenario('edit');
         $request=new Request();
+        $model->loadData($id);
         if($request->isPost){
             $model->load($request->post());
-
             if($model->validate()){
                 $model->updated_at=time();
                 $model->save();
+                $model->edRole($id);
                 \Yii::$app->session->setFlash('success','修改成功');
                 $this->redirect(['user/index']);
             }
@@ -84,7 +86,6 @@ class UserController extends Controller{
             if($model->validate()){
                 $user=\Yii::$app->user->identity;
                 $user->password_hash=$model->newpassword;
-
                 if($user->save(false)){
                     \Yii::$app->session->setFlash('success','密码修改成功');
                     return $this->redirect(['user/index']);
@@ -106,6 +107,7 @@ class UserController extends Controller{
         }
         return $this->render('login', ['model' =>$model]);
     }
+
     public function actions() {
         return [
             's-upload' => [

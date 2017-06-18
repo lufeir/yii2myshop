@@ -3,6 +3,7 @@
 namespace backend\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 use yii\web\IdentityInterface;
 
 /**
@@ -28,11 +29,12 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     public $password2;
     const  SCENARIO_ADD='add';
     const  SCENARIO_EDIT='edit';
+    public $roles=[];
     public function scenarios()
     {
         $scenarios =  parent::scenarios();
-        $scenarios[self::SCENARIO_ADD] = ['password_hash','password2','username','email','logo','status'];
-        $scenarios[self::SCENARIO_EDIT] = ['username','email','logo','status'];
+        $scenarios[self::SCENARIO_ADD] = ['password_hash','password2','username','email','logo','status','roles'];
+        $scenarios[self::SCENARIO_EDIT] = ['username','email','logo','status','roles'];
         return $scenarios;
     }
     public static function tableName()
@@ -52,11 +54,39 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             [['username', 'password_hash', 'password_reset_token', 'email', 'last_login_ip'], 'string', 'max' => 255],
             [['username'], 'unique'],
             [['email'], 'email'],
-            ['logo','safe'],
+            [['logo','roles'],'safe'],
             ['password2','compare','compareAttribute'=>'password_hash','message'=>'两次密码必须一样'],
         ];
     }
-
+    //回显用户的角色
+    public function loadData($id){
+         $authManger=\Yii::$app->authManager;
+         $roles=$authManger->getRolesByUser($id);
+         foreach ($roles as $role){
+             $this->roles[]=$role->name;
+         }
+    }
+    public static function getRoles(){
+        $authManmger=\Yii::$app->authManager;
+        return ArrayHelper::map($authManmger->getRoles(),'name','description');
+    }
+    //直接给用户添加角色
+   public function upRole($id){
+        foreach ($this->roles as $roleName){
+            $authManmger=\Yii::$app->authManager;
+            $role=$authManmger->getRole($roleName);
+            $authManmger->assign($role,$id);
+        }
+   }
+   //修改用户的角色
+   public function edRole($id){
+         $authManmger=\Yii::$app->authManager;
+         $authManmger->revokeAll($id);
+         foreach ($this->roles as $roleName){
+             $role=$authManmger->getRole($roleName);
+             $authManmger->assign($role,$id);
+         }
+   }
     /**
      * @inheritdoc
      */
@@ -71,9 +101,10 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             'email' => '邮箱',
             'status' => '账号状态',
             'logo' => 'LOGO',
-
+            'roles'=>'角色',
         ];
     }
+
     public function beforeSave($insert)
     {
         //只在添加的时候设置

@@ -14,6 +14,7 @@ if(!$model->password_hash){
 }
 echo $form->field($model,'email')->textInput();
 echo $form->field($model,'status',['inline'=>true])->radioList([1=>'正常',0=>'未激活']);
+echo $form->field($model,'roles',['inline'=>true])->checkboxList(\backend\models\User::getRoles());
 echo $form->field($model,'logo')->hiddenInput(['id'=>'logo_id']);
 echo \yii\bootstrap\Html::fileInput('test', NULL, ['id' => 'test']);
 echo \xj\uploadify\Uploadify::widget([

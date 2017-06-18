@@ -1,5 +1,5 @@
 <?= \yii\helpers\Html::a('添加管理员',['user/add'],['class'=>'btn btn-info'])?>
-<?= \yii\helpers\Html::a('修改密码',['user/uppasword'],['class'=>'btn btn-danger'])?>
+<?= \yii\helpers\Html::a('重置密码',['user/uppasword'],['class'=>'btn btn-primary'])?>
     <table class="table table-bordered">
         <tr>
             <th>ID</th>
@@ -17,7 +17,7 @@
                     <td><?=$model->email?></td>
                     <td><?=date('Y-m-d H:i:s',$model->created_at)?></td>
                     <td><?=\yii\helpers\Html::img(Yii::getAlias('@web').$model->logo,['width'=>60])?></td>
-                    <td><?= \yii\helpers\Html::a('修改',['user/edit','id'=>$model->id],['class'=>'btn btn-warning'])?> &emsp;&emsp;<?= \yii\helpers\Html::a('删除',['user/delete','id'=>$model->id],['class'=>'btn btn-danger'])?></td>
+                    <td><?= \yii\helpers\Html::a('修改',['user/edit','id'=>$model->id],['class'=>'btn btn-warning btn-xs'])?> &ensp;<?= \yii\helpers\Html::a('删除',['user/delete','id'=>$model->id],['class'=>'btn btn-danger btn-xs'])?></td>
 
                 </tr>
 
