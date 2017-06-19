@@ -6,6 +6,7 @@
  * Time: 10:30
  */
 namespace backend\controllers;
+use backend\filetr\RbacFilter;
 use backend\models\LoginForm;
 use backend\models\PasswordForm;
 use backend\models\User;
@@ -19,20 +20,10 @@ class UserController extends Controller{
     public function behaviors()
     {
         return [
-            'acf'=>[
-                'class'=>AccessControl::className(),
-                'only' => ['logout', 'signup','login'],
-                'rules'=>[
-                    [//允许未登录用户只执行login
-                        'allow'=>true,
-                        'actions'=>['login'],
-                        'roles'=>['?'],
-                    ],
-                    [//当前控制器的所有操作，登录用户都允许
-                        'allow'=>true,
-                        'roles'=>['@'],
-                    ],
-                ]
+            'rbac'=>[
+                'class'=>RbacFilter::className(),
+                'only'=>['add','index','edit'],
+
             ]
         ];
     }
@@ -98,15 +89,19 @@ class UserController extends Controller{
     }
     public function actionLogin(){
         //判断是不是游客。
-        if (!\Yii::$app->user->isGuest) {     //①
-            return $this->goHome();
-        }
+
         $model = new LoginForm();             //②
         if ($model->load(\Yii::$app->request->post()) && $model->login()) {      //③
             return $this->redirect(['user/index']);          //④
         }
         return $this->render('login', ['model' =>$model]);
     }
+    public function actionLogout()
+    {
+        \Yii::$app->user->logout();
+        return $this->redirect(['user/login']);
+    }
+
 
     public function actions() {
         return [

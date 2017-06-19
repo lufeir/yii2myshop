@@ -6,6 +6,7 @@
  * Time: 15:24
  */
 namespace backend\controllers;
+use backend\filetr\RbacFilter;
 use backend\models\Brand;
 use yii\data\Pagination;
 use yii\web\Controller;
@@ -15,6 +16,16 @@ use xj\uploadify\UploadAction;
 
 
 class BrandController extends Controller{
+    public function behaviors()
+    {
+       return [
+           'rbac'=>[
+               'class'=>RbacFilter::className(),
+
+           ]
+       ];
+    }
+
     public function actionAdd(){
         $model=new Brand();
         $request=new Request();

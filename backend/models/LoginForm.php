@@ -21,7 +21,6 @@ class LoginForm extends Model{
             //添加自定义验证方法
             ['username','validateUsername'],
             ['rememberMe', 'boolean'],
-            ['code','captcha','captchaAction'=>'user/captcha'],
         ];
     }
     public function attributeLabels()
@@ -29,7 +28,6 @@ class LoginForm extends Model{
        return [
            'username'=>'用户名',
            'password'=>'密码',
-           'code'=>'验证码',
            'rememberMe'=>'记住我',
        ];
     }
@@ -40,6 +38,7 @@ class LoginForm extends Model{
             {
                 return \Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
             }
+            return true;
 
         }
         return false;

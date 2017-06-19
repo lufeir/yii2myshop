@@ -6,6 +6,7 @@
  * Time: 11:24
  */
 namespace backend\controllers;
+use backend\filetr\RbacFilter;
 use backend\models\Brand;
 use backend\models\Goods;
 use backend\models\GoodsCategory;
@@ -20,6 +21,15 @@ use yii\web\Controller;
 use yii\web\Request;
 
 class GoodsController extends Controller{
+    public function behaviors()
+    {
+        return [
+            'rbac'=>[
+                'class'=>RbacFilter::className(),
+
+            ]
+        ];
+    }
     public function actionAdd(){
         $model=new Goods();
         $brand=Brand::find()->all();
