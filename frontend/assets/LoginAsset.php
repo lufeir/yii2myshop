@@ -21,9 +21,11 @@ class LoginAsset extends AssetBundle{
         'style/footer.css',
     ];
     public $js = [
+
     ];
     //和其他静态资源管理器的依赖关系
     public $depends = [
         'yii\web\JqueryAsset',
+
     ];
 }

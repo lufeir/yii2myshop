@@ -24,7 +24,9 @@
              echo $form->field($model,'password')->passwordInput(['class'=>'txt']);
              echo $form->field($model,'rePassword')->passwordInput(['class'=>'txt']);
              echo $form->field($model,'email')->textInput(['class'=>'txt']);
-             echo $form->field($model,'tel')->textInput(['class'=>'txt']);
+              echo $form->field($model,'tel')->textInput(['class'=>'txt']);
+              $button =  \yii\helpers\Html::button('发送短信验证码',['id'=>'send_sms_button']);
+             echo $form->field($model,'smsCode',['options'=>['class'=>'checkcode'],'template'=>"{label}\n{input}$button\n{hint}\n{error}"])->textInput(['class'=>'txt']);
              echo $form->field($model,'code',['options'=>['class'=>'checkcode']])->widget(\yii\captcha\Captcha::className(),['template'=>'{input}{image}']);
              echo '<li>
                         <label for="">&nbsp;</label>
@@ -49,4 +51,26 @@
     </div>
 </div>
 <!-- 登录主体部分end -->
->
+<?php
+/* @var $this \yii\web\View
+ */
+$url=\yii\helpers\Url::to(['user/test']);
+$this->registerJs(new \yii\web\JsExpression(
+        <<<JS
+        $("#send_sms_button").click(function() {
+         var tel = $("#member-tel").val();
+          console.debug(tel);
+          $.post('$url',{tel:tel},function(data) {   
+           if(data=='success'){
+                console.log('短信发送成功');
+                alert('短信发送成功');
+           }else{
+                console.log(data);
+             }
+          });
+          
+        });
+  
+JS
+
+));

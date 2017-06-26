@@ -28,6 +28,7 @@ class Member extends \yii\db\ActiveRecord implements IdentityInterface
     public $password;//明文密码
     public $rePassword;//确认密码
     public $code;
+    public $smsCode;//短信验证码
     public static function tableName()
     {
         return 'member';
@@ -41,6 +42,7 @@ class Member extends \yii\db\ActiveRecord implements IdentityInterface
         return [
             [['last_login_time', 'last_login_ip', 'created_at', 'updated_at', 'status'], 'integer'],
             [['username'], 'unique'],
+            ['smsCode','required'],
             [['auth_key'], 'string', 'max' => 32],
             [['password_hash'], 'string', 'max' => 100],
             [['email'],'email'],
@@ -48,6 +50,7 @@ class Member extends \yii\db\ActiveRecord implements IdentityInterface
             [['tel'], 'string', 'max' => 11],
             ['password','safe'],
             ['rePassword','compare','compareAttribute'=>'password','message'=>'两次密码必须一样'],
+            ['smsCode','valaditeSMS']
         ];
     }
 
@@ -71,9 +74,15 @@ class Member extends \yii\db\ActiveRecord implements IdentityInterface
             'password'=>'密码：',
             'rePassword'=>'确认密码：',
             'code'=>'验证码：',
+            'smsCode'=>'短信验证码',
         ];
     }
-
+   public function valaditeSMS(){
+        $value=Yii::$app->cache->get('tel_'.$this->tel);
+        if(!$value || $this->smsCode!=$value){
+            $this->addError('smsCode','验证码不正确');
+        }
+   }
     public function beforeSave($insert)
     {
         //只在添加的时候设置

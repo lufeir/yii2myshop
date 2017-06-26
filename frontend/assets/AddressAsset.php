@@ -8,7 +8,7 @@
 namespace frontend\assets;
 use yii\web\AssetBundle;
 
-class AppAsset extends AssetBundle
+class AddressAsset extends AssetBundle
 {
     public $basePath = '@webroot';//静态资源的硬盘路径
     public $baseUrl = '@web';//静态资源的url路径
@@ -17,15 +17,23 @@ class AppAsset extends AssetBundle
         'style/base.css',
         'style/global.css',
         'style/header.css',
-        'style/index.css',
+        'style/list.css',
+        'style/goods.css',
+        'style/common.css',
+        'style/home.css',
+        'style/address.css',
         'style/bottomnav.css',
         'style/footer.css',
+        'style/jqzoom.css',
 
     ];
     public $js = [
         'js/jquery-1.8.3.min.js',
         'js/header.js',
-        'js/index.js',
+        'js/home.js',
+        'js/list.js',
+        'js/goods.js',
+        'js/jqzoom-core.js',
     ];
     //和其他静态资源管理器的依赖关系
     public $depends = [

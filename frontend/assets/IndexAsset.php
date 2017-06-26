@@ -8,7 +8,7 @@
 namespace frontend\assets;
 use yii\web\AssetBundle;
 
-class AppAsset extends AssetBundle
+class IndexAsset extends AssetBundle
 {
     public $basePath = '@webroot';//静态资源的硬盘路径
     public $baseUrl = '@web';//静态资源的url路径

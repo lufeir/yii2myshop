@@ -52,7 +52,7 @@ class GoodsSearch extends Goods
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => 2,
+                'pageSize' => 4,
             ],
         ]);
         // 从参数的数据中加载过滤条件，并验证

@@ -1,9 +1,7 @@
 <?php
-/* @var $this yii\web\View */
-?>
-<h1>user/index</h1>
-
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+/**
+ * Created by PhpStorm.
+ * User: 李政宇
+ * Date: 2017/6/21
+ * Time: 14:05
+ */
