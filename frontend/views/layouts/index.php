@@ -50,13 +50,13 @@ use yii\helpers\Html;
 <div class="header w1210 bc mt15">
     <!-- 头部上半部分 start 包括 logo、搜索、用户中心和购物车结算 -->
     <div class="logo w1210">
-        <h1 class="fl"><a href="index.html"><img src=<?php echo \Yii::getAlias('@web')?>"/images/logo.png" alt="京西商城"></a></h1>
+        <h1 class="fl"><a href="index.html"><img src="<?php echo \Yii::getAlias('@web')?>/images/logo.png" alt="京西商城"></a></h1>
         <!-- 头部搜索 start -->
         <div class="search fl">
             <div class="search_form">
                 <div class="form_left fl"></div>
-                <form action="" name="serarch" method="get" class="fl">
-                    <input type="text" class="txt" value="请输入商品关键字" /><input type="submit" class="btn" value="搜索" />
+                <form action="<?=\yii\helpers\Url::to(['goods/list'])?>" name="serarch" method="get" class="fl">
+                    <input type="text" class="txt" value="请输入商品关键字" name="keyword" /><input type="submit" class="btn" value="搜索" />
                 </form>
                 <div class="form_right fl"></div>
             </div>
@@ -94,7 +94,7 @@ use yii\helpers\Html;
                     <div class="uclist mt10">
                         <ul class="list1 fl">
                             <li><a href="">用户信息></a></li>
-                            <li><a href="">我的订单></a></li>
+                            <li><a href="http://www.yii2shop.com/cart/order-list.html">我的订单></a></li>
                             <li><a href="http://www.yii2shop.com/address/index.html">收货地址></a></li>
                             <li><a href="">我的收藏></a></li>
                         </ul>
@@ -111,9 +111,9 @@ use yii\helpers\Html;
                     <div class="viewlist mt10">
                         <h3>最近浏览的商品：</h3>
                         <ul>
-                            <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/view_list1.jpg" alt="" /></a></li>
-                            <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/view_list2.jpg" alt="" /></a></li>
-                            <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/view_list3.jpg" alt="" /></a></li>
+                            <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/view_list1.jpg" alt="" /></a></li>
+                            <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/view_list2.jpg" alt="" /></a></li>
+                            <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/view_list3.jpg" alt="" /></a></li>
                         </ul>
                     </div>
                 </dd>
@@ -234,10 +234,10 @@ use yii\helpers\Html;
         © 2005-2013 京东网上商城 版权所有，并保留所有权利。  ICP备案证书号:京ICP证070359号
     </p>
     <p class="auth">
-        <a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/xin.png" alt="" /></a>
-        <a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/kexin.jpg" alt="" /></a>
-        <a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/police.jpg" alt="" /></a>
-        <a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/beian.gif" alt="" /></a>
+        <a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/xin.png" alt="" /></a>
+        <a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/kexin.jpg" alt="" /></a>
+        <a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/police.jpg" alt="" /></a>
+        <a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/beian.gif" alt="" /></a>
     </p>
 </div>
 

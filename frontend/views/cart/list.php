@@ -82,7 +82,7 @@ $this->registerJsFile('@web/js/home.js"',['depends'=>\yii\web\JqueryAsset::class
                     <td><?=$order->name?></td>
                     <td>￥<?=$content->total?> <?=$order->payment_name?></td>
                     <td><?=date('Y-m-d H:i:s',$order->create_time)?></td>
-                    <td><?=$order->status?'待付款':'已取消'?></td>
+                    <td><?=\frontend\models\Order::$statusOption[$order->status]?></td>
                     <td><a href="">查看</a> | <a href="">删除</a></td>
                 </tr>
                      <?php endforeach;?>

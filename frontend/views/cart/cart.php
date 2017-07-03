@@ -44,7 +44,7 @@ $this->registerJsFile('@web/js/cart1.js',['depends'=>\yii\web\JqueryAsset::class
     </table>
     <div class="cart_btn w990 bc mt10">
         <a href="http://www.yii2shop.com/goods/index.html" class="continue">继续购物</a>
-        <a href="http://www.yii2shop.com/cart/order.html" class="checkout">结 算</a>
+        <a href="http://www.yii2shop.com/cart/order-index.html" class="checkout">结 算</a>
     </div>
 </div>
 <!-- 主体部分 end -->

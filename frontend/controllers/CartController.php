@@ -13,6 +13,7 @@ use frontend\models\Locations;
 use frontend\models\Order;
 use frontend\models\OrderGoods;
 use yii\base\Model;
+use yii\db\Exception;
 use yii\web\Controller;
 use Yii;
 use yii\web\Cookie;
@@ -219,20 +220,59 @@ class CartController extends Controller{
                 $order->total=$price;
                 $order->status=1;
                 $order->create_time=time();
-                $order->save();
-                foreach ($models as $model){
-                    $order_goods=new OrderGoods();
-                    $order_goods->order_id=$order->id;
-                    $order_goods->goods_id=$model['id'];
-                    $order_goods->goods_name=$model['name'];
-                    $order_goods->logo=$model['logo'];
-                    $order_goods->price=$model['shop_price'];
-                    $order_goods->total=($model['shop_price']*$model['amount']);
-                    $order_goods->save();
+                //开启事物
+                $transation=\Yii::$app->db->beginTransaction();
+                try{
+                    $order->save();
+                    foreach ($models as $model){
+                        $order_goods=new OrderGoods();
+                        $goods=Goods::findOne(['id'=>$model['id']]);
+                        if($goods==null){
+                            throw  new Exception('商品已下架');
+                        }
+                        if($goods->stock<$model['amount']){
+                            throw new Exception('商品库存不足');
+                        }
+                        $order_goods->order_id=$order->id;
+                        $order_goods->goods_id=$model['id'];
+                        $order_goods->goods_name=$model['name'];
+                        $order_goods->logo=$model['logo'];
+                        $order_goods->price=$model['shop_price'];
+                        $order_goods->total=($model['shop_price']*$model['amount']);
+                        $order_goods->amount=$model['amount'];
+                        $order_goods->save();
+                        $goods->stock-=$model['amount'];
+                        $goods->save();
+                    }
+                    foreach ($carts as $cart){
+                        $cart->delete();
+                    }
+                    $transation->commit();
+                    echo 'success';
+                }catch (Exception $e){
+                     $transation->rollBack();
+                     echo $e->getMessage();
                 }
-                foreach ($carts as $cart){
-                    $cart->delete();
-                }
+
+
+            }
+
+        }
+
+    }
+    public function actionOrderIndex(){
+        if(\Yii::$app->user->isGuest){
+            return $this->redirect(['user/login']);
+        }else{
+            $carts=Cart::findAll(['member_id'=>\Yii::$app->user->getId()]);
+            $address=Area::findAll(['member_id'=>\Yii::$app->user->getId()]);
+            $models=[];
+            foreach ($carts as $cart){
+//                var_dump($cart->goods_id);exit;
+                $goods=Goods::findOne(['id'=>$cart->goods_id])->attributes;
+//                var_dump($goods);exit;
+                $goods['amount']=$cart->amount;
+                $models[] = $goods;
 
             }
             return $this->render('order',['models'=>$models,'address'=>$address]);
@@ -245,6 +285,9 @@ class CartController extends Controller{
     }
     public function actionOrderList(){
         $this->layout='address';
+        if(\Yii::$app->user->isGuest){
+            return $this->redirect(['user/login']);
+        }
         $orders=Order::findAll(['member_id'=>\Yii::$app->user->getId()]);
 
         return $this->render('list',['orders'=>$orders]);

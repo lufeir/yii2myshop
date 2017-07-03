@@ -215,8 +215,15 @@ $url=\yii\helpers\Url::to(['cart/order']);
          var price=$(".fillin_ft strong:eq(1)").text();
          var payment_id=$(".pay_select input:checked").val();
          var data={address_id:address,delivery_id:delivery_id,price:price,payment_id:payment_id,"_csrf-frontend":"$token"};
-         $.post("$url",data,function() {
-           window.location="http://www.yii2shop.com/cart/order-true.html";
+         $.post("$url",data,function(response) {
+             if(response=='success'){
+                   window.location="http://www.yii2shop.com/cart/order-list.html";
+             }else{
+                 alert(response);
+             }
+             console.debug(response);
+         
+           
          });
        
       

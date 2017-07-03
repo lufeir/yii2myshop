@@ -27,12 +27,12 @@
         <div class="area">
             <div class="slide_items">
                 <ul>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/index_slide1.jpg" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/index_slide2.jpg" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/index_slide3.jpg" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/index_slide4.jpg" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/index_slide5.jpg" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/index_slide6.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/index_slide1.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/index_slide2.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/index_slide3.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/index_slide4.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/index_slide5.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/index_slide6.jpg" alt="" /></a></li>
                 </ul>
             </div>
             <div class="slide_controls">
@@ -51,7 +51,7 @@
 
     <!-- 快报区域 start-->
     <div class="coll_right fl ml10">
-        <div class="ad"><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/ad.jpg" alt="" /></a></div>
+        <div class="ad"><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/ad.jpg" alt="" /></a></div>
 
         <div class="news mt10">
             <h2><a href="">更多快报&nbsp;></a><strong>网站快报</strong></h2>
@@ -113,11 +113,11 @@
                 <div class="travel none">
                     <ul>
                         <li>
-                            <a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/holiday.jpg" alt="" /></a>
+                            <a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/holiday.jpg" alt="" /></a>
                             <a href="" class="button">度假查询</a>
                         </li>
                         <li>
-                            <a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/scenic.jpg" alt="" /></a>
+                            <a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/scenic.jpg" alt="" /></a>
                             <a href="" class="button">景点查询</a>
                         </li>
                     </ul>
@@ -126,16 +126,16 @@
 
                 <!-- 彩票 start -->
                 <div class="lottery none">
-                    <p><img src=<?php echo \Yii::getAlias('@web')?>"/images/lottery.jpg" alt="" /></p>
+                    <p><img src="<?php echo \Yii::getAlias('@web')?>/images/lottery.jpg" alt="" /></p>
                 </div>
                 <!-- 彩票 end -->
 
                 <!-- 游戏 start -->
                 <div class="game none">
                     <ul>
-                        <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/sanguo.jpg" alt="" /></a></li>
-                        <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/taohua.jpg" alt="" /></a></li>
-                        <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/wulin.jpg" alt="" /></a></li>
+                        <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/sanguo.jpg" alt="" /></a></li>
+                        <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/taohua.jpg" alt="" /></a></li>
+                        <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/wulin.jpg" alt="" /></a></li>
                     </ul>
                 </div>
                 <!-- 游戏 end -->
@@ -165,35 +165,35 @@
                 <ul>
                     <li>
                         <dl>
-                            <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/crazy1.jpg" alt="" /></a></dt>
+                            <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/crazy1.jpg" alt="" /></a></dt>
                             <dd><a href="">惠普G4-1332TX 14英寸</a></dd>
                             <dd><span>售价：</span><strong> ￥2999.00</strong></dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
-                            <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/crazy2.jpg" alt="" /></a></dt>
+                            <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/crazy2.jpg" alt="" /></a></dt>
                             <dd><a href="">直降100元！TCL118升冰箱</a></dd>
                             <dd><span>售价：</span><strong> ￥800.00</strong></dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
-                            <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/crazy3.jpg" alt="" /></a></dt>
+                            <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/crazy3.jpg" alt="" /></a></dt>
                             <dd><a href="">康佳液晶37寸电视机</a></dd>
                             <dd><span>售价：</span><strong> ￥2799.00</strong></dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
-                            <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/crazy4.jpg" alt="" /></a></dt>
+                            <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/crazy4.jpg" alt="" /></a></dt>
                             <dd><a href="">梨子平板电脑7.9寸</a></dd>
                             <dd><span>售价：</span><strong> ￥1999.00</strong></dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
-                            <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/crazy5.jpg" alt="" /></a></dt>
+                            <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/crazy5.jpg" alt="" /></a></dt>
                             <dd><a href="">好声音耳机</a></dd>
                             <dd><span>售价：</span><strong> ￥199.00</strong></dd>
                         </dl>
@@ -207,21 +207,21 @@
                 <ul>
                     <li>
                         <dl>
-                            <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/hot1.jpg" alt="" /></a></dt>
+                            <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/hot1.jpg" alt="" /></a></dt>
                             <dd><a href="">索尼双核五英寸四核手机！</a></dd>
                             <dd><span>售价：</span><strong> ￥1386.00</strong></dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
-                            <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/hot2.jpg" alt="" /></a></dt>
+                            <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/hot2.jpg" alt="" /></a></dt>
                             <dd><a href="">华为通话平板仅需969元！</a></dd>
                             <dd><span>售价：</span><strong> ￥969.00</strong></dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
-                            <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/hot3.jpg" alt="" /></a></dt>
+                            <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/hot3.jpg" alt="" /></a></dt>
                             <dd><a href="">卡姿兰明星单品7件彩妆套装</a></dd>
                             <dd><span>售价：</span><strong> ￥169.00</strong></dd>
                         </dl>
@@ -235,21 +235,21 @@
                 <ul>
                     <li>
                         <dl>
-                            <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/recommend1.jpg" alt="" /></a></dt>
+                            <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/recommend1.jpg" alt="" /></a></dt>
                             <dd><a href="">黄飞红麻辣花生整箱特惠装</a></dd>
                             <dd><span>售价：</span><strong> ￥139.00</strong></dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
-                            <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/recommend2.jpg" alt="" /></a></dt>
+                            <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/recommend2.jpg" alt="" /></a></dt>
                             <dd><a href="">戴尔IN1940MW 19英寸LE</a></dd>
                             <dd><span>售价：</span><strong> ￥679.00</strong></dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
-                            <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/recommend3.jpg" alt="" /></a></dt>
+                            <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/recommend3.jpg" alt="" /></a></dt>
                             <dd><a href="">罗辑思维音频车载CD</a></dd>
                             <dd><span>售价：</span><strong> ￥24.80</strong></dd>
                         </dl>
@@ -268,13 +268,13 @@
         <h2><strong>网站首发</strong></h2>
         <div class="sidebar_wrap">
             <dl class="first">
-                <dt class="fl"><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/viewsonic.jpg" alt="" /></a></dt>
+                <dt class="fl"><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/viewsonic.jpg" alt="" /></a></dt>
                 <dd><strong><a href="">ViewSonic优派N710 </a></strong> <em>首发</em></dd>
                 <dd>苹果iphone 5免费送！攀高作为全球智能语音血压计领导品牌，新推出的黑金刚高端智能电子血压计，改变传统测量方式让血压测量迈入一体化时代。</dd>
             </dl>
 
             <dl>
-                <dt class="fr"><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/samsung.jpg" alt="" /></a></dt>
+                <dt class="fr"><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/samsung.jpg" alt="" /></a></dt>
                 <dd><strong><a href="">Samsung三星Galaxy</a></strong> <em>首发</em></dd>
                 <dd>电视百科全书，360°无死角操控，感受智能新体验！双核CPU+双核GPU+MEMC运动防抖，58寸大屏打造全新视听盛宴！</dd>
             </dl>
@@ -312,7 +312,7 @@
                     <li><a href=""><b>.</b>网卡</a></li>
                     <li><a href=""><b>.</b>交换机</a></li>
                 </ul>
-                <p><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/notebook.jpg" alt="" /></a></p>
+                <p><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/notebook.jpg" alt="" /></a></p>
             </div>
 
 
@@ -331,7 +331,7 @@
                     <ul>
                         <li>
                             <dl>
-                                <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/hpG4.jpg" alt="" /></a></dt>
+                                <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/hpG4.jpg" alt="" /></a></dt>
                                 <dd><a href="">惠普G4-1332TX 14英寸笔</a></dd>
                                 <dd><span>售价：</span> <strong>￥2999.00</strong></dd>
                             </dl>
@@ -339,7 +339,7 @@
 
                         <li>
                             <dl>
-                                <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/thinkpad e420.jpg" alt="" /></a></dt>
+                                <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/thinkpad e420.jpg" alt="" /></a></dt>
                                 <dd><a href="">ThinkPad E42014英寸笔..</a></dd>
                                 <dd><span>售价：</span> <strong>￥4199.00</strong></dd>
                             </dl>
@@ -347,7 +347,7 @@
 
                         <li>
                             <dl>
-                                <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/acer4739.jpg" alt="" /></a></dt>
+                                <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/acer4739.jpg" alt="" /></a></dt>
                                 <dd><a href="">宏碁AS4739-382G32Mnk</a></dd>
                                 <dd><span>售价：</span> <strong>￥2799.00</strong></dd>
                             </dl>
@@ -355,7 +355,7 @@
 
                         <li>
                             <dl>
-                                <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/samsung6800.jpg" alt="" /></a></dt>
+                                <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/samsung6800.jpg" alt="" /></a></dt>
                                 <dd><a href="">三星Galaxy Tab P6800.</a></dd>
                                 <dd><span>售价：</span> <strong>￥4699.00</strong></dd>
                             </dl>
@@ -363,7 +363,7 @@
 
                         <li>
                             <dl>
-                                <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/lh531.jpg" alt="" /></a></dt>
+                                <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/lh531.jpg" alt="" /></a></dt>
                                 <dd><a href="">富士通LH531 14.1英寸笔记</a></dd>
                                 <dd><span>售价：</span> <strong>￥2189.00</strong></dd>
                             </dl>
@@ -371,7 +371,7 @@
 
                         <li>
                             <dl>
-                                <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/qinghuax2.jpg" alt="" /></a></dt>
+                                <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/qinghuax2.jpg" alt="" /></a></dt>
                                 <dd><a href="">清华同方精锐X2笔记本 </a></dd>
                                 <dd><span>售价：</span> <strong>￥2499.00</strong></dd>
                             </dl>
@@ -383,7 +383,7 @@
                     <ul>
                         <li>
                             <dl>
-                                <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/hpG4.jpg" alt="" /></a></dt>
+                                <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/hpG4.jpg" alt="" /></a></dt>
                                 <dd><a href="">惠普G4-1332TX 14英寸笔</a></dd>
                                 <dd><span>售价：</span> <strong>￥2999.00</strong></dd>
                             </dl>
@@ -391,7 +391,7 @@
 
                         <li>
                             <dl>
-                                <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/qinghuax2.jpg" alt="" /></a></dt>
+                                <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/qinghuax2.jpg" alt="" /></a></dt>
                                 <dd><a href="">清华同方精锐X2笔记本 </a></dd>
                                 <dd><span>售价：</span> <strong>￥2499.00</strong></dd>
                             </dl>
@@ -404,7 +404,7 @@
                     <ul>
                         <li>
                             <dl>
-                                <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/thinkpad e420.jpg" alt="" /></a></dt>
+                                <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/thinkpad e420.jpg" alt="" /></a></dt>
                                 <dd><a href="">ThinkPad E42014英寸笔..</a></dd>
                                 <dd><span>售价：</span> <strong>￥4199.00</strong></dd>
                             </dl>
@@ -412,7 +412,7 @@
 
                         <li>
                             <dl>
-                                <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/acer4739.jpg" alt="" /></a></dt>
+                                <dt><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/acer4739.jpg" alt="" /></a></dt>
                                 <dd><a href="">宏碁AS4739-382G32Mnk</a></dd>
                                 <dd><span>售价：</span> <strong>￥2799.00</strong></dd>
                             </dl>
@@ -433,15 +433,15 @@
             <h2><a href="">更多品牌&nbsp;></a><strong>品牌旗舰店</strong></h2>
             <div class="sidebar_wrap">
                 <ul>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/dell.gif" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/acer.gif" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/fujitsu.jpg" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/hp.jpg" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/lenove.jpg" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/samsung.gif" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/dlink.gif" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/seagate.jpg" alt="" /></a></li>
-                    <li><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/intel.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/dell.gif" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/acer.gif" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/fujitsu.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/hp.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/lenove.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/samsung.gif" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/dlink.gif" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/seagate.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/intel.jpg" alt="" /></a></li>
                 </ul>
             </div>
         </div>
@@ -464,7 +464,7 @@
 
         <!-- 广告 start -->
         <div class="ads mt10">
-            <a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/canon.jpg" alt="" /></a>
+            <a href=""><img src="<?php echo \Yii::getAlias('@web')?>/images/canon.jpg" alt="" /></a>
         </div>
         <!-- 广告 end -->
     </div>

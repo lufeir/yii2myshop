@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use backend\models\Goods;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -43,6 +44,9 @@ class Order extends \yii\db\ActiveRecord
         ['payment_id'=>3,'payment_name'=>'上门自提'],
         ['payment_id'=>4,'payment_name'=>'邮局汇款'],
         ];
+    public static $statusOption=[
+        0=>'已取消',1=>'待付款',2=>'代发货',3=>'已完成'
+    ];
     public $address_id;
     public static function tableName()
     {
@@ -58,7 +62,7 @@ class Order extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['member_id', 'delivery_id', 'payment_id', 'status', 'create_time','province', 'city', 'area','address_id'], 'safe'],
+            [['member_id','amount', 'delivery_id', 'payment_id', 'status', 'create_time','province', 'city', 'area','address_id'], 'safe'],
             [['delivery_price', 'total'], 'number'],
             [['name'], 'string', 'max' => 50],
             [['address'], 'string', 'max' => 255],
