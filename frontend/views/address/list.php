@@ -1,4 +1,6 @@
-
+<?php
+use yii\helpers\Html;
+?>
 <!-- 列表主体 start -->
 <div class="list w1210 bc mt10">
     <!-- 面包屑导航 start -->
@@ -116,7 +118,7 @@
             <h2><a href="">清空</a><strong>最近浏览过的商品</strong></h2>
             <div class="leftbar_wrap">
                 <dl>
-                    <dt><a href=""><img src=<?php echo \Yii::getAlias('@web')?>"/images/hpG4.jpg" alt="" /></a></dt>
+                    <dt><a href=""><?=\yii\helpers\Html::img('@web/images/hpG4.jpg')?>" alt="" /></a></dt>
                     <dd><a href="">惠普G4-1332TX 14英寸笔记...</a></dd>
                 </dl>
 
@@ -268,8 +270,8 @@
                 <?php foreach ($models as $model):?>
                 <li>
                     <dl>
-                        <dt><a href="http://www.yii2shop.com/address/content.html?id=<?=$model->id?>"><img src="http://admin.yii2shop.com<?=$model->logo?>"></a></dt>
-                        <dd><a href="http://www.yii2shop.com/address/content.html?id=<?=$model->id?>"><?=$model->name?></a></dt>
+                        <dt><?=Html::a(Html::img('http://admin.yii2shop.com/'.$model->logo),['address/content','id'=>$model->id])?></dt>
+                        <dd><?=Html::a($model->name,['address/content','id'=>$model->id])?></dt>
                         <dd><strong>￥<?=$model->shop_price?></strong></dt>
                         <dd><a href="http://www.yii2shop.com/address/content.html?id=<?=$model->id?>"><em>已有10人评价</em></a></dt>
                     </dl>
